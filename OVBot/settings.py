@@ -25,7 +25,7 @@ SECRET_KEY = f"django-insecure-i#4=w@5(sv6$kjn4o@&pkcg^n%w_vq9)3f1(@==^g$hn1eldo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','discordovbot.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','ovbotdiscord.herokuapp.com']
 
 
 # Application definition
