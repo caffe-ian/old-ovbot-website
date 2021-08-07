@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="OV Bot">
+    <meta name="description" content="A discord economy bot">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Confirm user</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'ovbot.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'css/Confirm-user.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'js/jquery-1.9.1.min.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" defer=""></script>
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+
+    <meta name="theme-color" content="#0063b1">
+    <meta property="og:title" content="Confirm user">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body"><header class="u-clearfix u-grey-80 u-header u-header" id="sec-61a4"><div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <div class="u-social-icons u-spacing-10 u-social-icons-1">
+          <a class="u-social-url" target="_blank" title="Discord" href="https://discord.com/channels/863025676213944340/863786964427735100"><span class="u-icon u-social-custom u-social-icon u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 24 24" style=""><use xlink:href="#svg-e522"></use></svg><svg class="u-svg-content" viewBox="0 0 24 24" id="svg-e522"><g fill="currentColor"><path d="m3.58 21.196h14.259l-.681-2.205c.101.088 5.842 5.009 5.842 5.009v-21.525c-.068-1.338-1.22-2.475-2.648-2.475l-16.767.003c-1.427 0-2.585 1.139-2.585 2.477v16.24c0 1.411 1.156 2.476 2.58 2.476zm10.548-15.513-.033.012.012-.012zm-7.631 1.269c1.833-1.334 3.532-1.27 3.532-1.27l.137.135c-2.243.535-3.26 1.537-3.26 1.537.104-.022 4.633-2.635 10.121.066 0 0-1.019-.937-3.124-1.537l.186-.183c.291.001 1.831.055 3.479 1.26 0 0 1.844 3.15 1.844 7.02-.061-.074-1.144 1.666-3.931 1.726 0 0-.472-.534-.808-1 1.63-.468 2.24-1.404 2.24-1.404-3.173 1.998-5.954 1.686-9.281.336-.031 0-.045-.014-.061-.03v-.006c-.016-.015-.03-.03-.061-.03h-.06c-.204-.134-.34-.2-.34-.2s.609.936 2.174 1.404c-.411.469-.818 1.002-.818 1.002-2.786-.066-3.802-1.806-3.802-1.806 0-3.876 1.833-7.02 1.833-7.02z"></path><path d="m14.308 12.771c.711 0 1.29-.6 1.29-1.34 0-.735-.576-1.335-1.29-1.335v.003c-.708 0-1.288.598-1.29 1.338 0 .734.579 1.334 1.29 1.334z"></path><path d="m9.69 12.771c.711 0 1.29-.6 1.29-1.34 0-.735-.575-1.335-1.286-1.335l-.004.003c-.711 0-1.29.598-1.29 1.338 0 .734.579 1.334 1.29 1.334z"></path>
+</g></svg></span>
+          </a>
+        </div>
+        <h1 class="u-custom-font u-font-raleway u-text u-text-1">OV Bot</h1>
+        <h6 class="u-custom-font u-font-raleway u-text u-text-2">Join our official discord server</h6>
+      </div></header> 
+    <section class="u-align-center u-clearfix u-grey-75 u-section-1" id="sec-d430">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-1">
+          <div class="u-gutter-0 u-layout">
+            <div class="u-layout-row">
+              <div class="u-align-left u-container-style u-grey-75 u-layout-cell u-shape-rectangle u-size-60 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
+                  <h1 class="u-custom-font u-font-raleway u-text u-text-1">Confirm user<br>
+                  </h1>
+                  <div class="u-border-1 u-border-white u-line u-line-horizontal u-line-1"></div>
+                  <p class="u-custom-font u-font-raleway u-text u-text-grey-15 u-text-3">&nbsp;Make sure this is the user you are searching<br>Address doesnt matter, you can enter anything in the address section since its not important<br>Note: Your donator tier will be downgraded if you purchase any pack lower than your current donator tier</p>
+                  <p class="u-custom-font u-font-raleway u-text u-text-4">{{ username }}<br>{{ userid }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div id="smart-button-container">
+      <div style="text-align: center;">
+        <div style="margin-bottom: 1.25rem;">
+          <p class="u-custom-font u-font-raleway u-text u-text-5">Confirm your selection and quantity</p>
+          <select id="item-options" style="color:black;"><option value="Donator Case" price="1.99">Donator Case - 1.99 USD</option><option value="Donator Pack" price="4.99">Donator Pack - 4.99 USD</option><option value="Pro Pack" price="9.99">Pro Pack - 9.99 USD</option><option value="Hacker Pack" price="19.99">Hacker Pack - 19.99 USD</option></select>
+          <select style="visibility: hidden; color:black;" id="quantitySelect"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option></select>
+        </div>
+      <div id="paypal-button-container"></div>
+      </div>
+    </div>
+    <script src="https://www.paypal.com/sdk/js?client-id=AdQ5SNRqLbM0-Ul_xfDY7Az9K7m5FqpHvOOEp4LLZx2398IkR__Q8GM79pZwqnRh-pWrK_7YIacQwLVk&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+    <script>
+      // sandbox https://www.paypal.com/sdk/js?client-id=ASNUTdFFkr3b0FsS5LkBWmA0Wonk1FgH4nX6xHeIE8ur5a01MyGioWC6H1hBI_5S_EvyZLsVgG2uzWIE&enable-funding=venmo&currency=USD
+      // live https://www.paypal.com/sdk/js?client-id=AdQ5SNRqLbM0-Ul_xfDY7Az9K7m5FqpHvOOEp4LLZx2398IkR__Q8GM79pZwqnRh-pWrK_7YIacQwLVk&enable-funding=venmo&currency=USD
+      function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+const csrftoken = getCookie('csrftoken');
+
+      function initPayPalButton() {
+        var shipping = 0;
+        var itemOptions = document.querySelector("#smart-button-container #item-options");
+    var quantity = parseInt(20);
+    var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+    var priceTotal;
+    if (!isNaN(quantity)) {
+      quantitySelect.style.visibility = "visible";
+    }
+    var orderDescription = 'OV Bot';
+    if(orderDescription === '') {
+      orderDescription = 'Item';
+    }
+    paypal.Buttons({
+      style: {
+        shape: 'rect',
+        color: 'gold',
+        layout: 'vertical',
+        label: 'paypal',
+        
+      },
+      createOrder: function(data, actions) {
+        var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+        var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+        var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
+        if(quantitySelect.options.length > 0) {
+          quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+        } else {
+          quantity = 1;
+        }
+
+        tax *= quantity;
+        tax = Math.round(tax * 100) / 100;
+        priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+        priceTotal = Math.round(priceTotal * 100) / 100;
+        var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+
+        return actions.order.create({
+          purchase_units: [{
+            description: orderDescription,
+            amount: {
+              currency_code: 'USD',
+              value: priceTotal,
+              breakdown: {
+                item_total: {
+                  currency_code: 'USD',
+                  value: itemTotalValue,
+                },
+                shipping: {
+                  currency_code: 'USD',
+                  value: shipping,
+                },
+                tax_total: {
+                  currency_code: 'USD',
+                  value: tax,
+                }
+              }
+            },
+            items: [{
+              name: selectedItemDescription,
+              unit_amount: {
+                currency_code: 'USD',
+                value: selectedItemPrice,
+              },
+              quantity: quantity
+            }]
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          success = details['status']
+          pu = details['purchase_units']
+          a = pu['0']
+          items = a['items']
+          b = items['0']
+          itemname = b['name']
+          quantity = b['quantity']
+          var data = {'price': priceTotal, 'success': success, 'itemname': itemname, 'quantity': quantity, 'userid': '{{ userid }}', 'username': '{{ username }}', 'csrfmiddlewaretoken': '{{ csrf_token }}' };
+          $.post("../purchase-success/", data);
+          setTimeout(() => {  window.location.replace("../purchase-success/"); }, 1000);
+        });
+      },
+      onError: function(err) {
+        window.location.replace("../purchase-fail");
+      },
+      onCancel: function(data) {
+        alert("Transaction cancelled.")
+      },
+    }).render('#paypal-button-container');
+  }
+  initPayPalButton();
+    </script>
+    Kindly Reminder<br>
+    We will not refund any purchases<br>
+    Contact us through our official discord server or<br>email if there is any bugs or issues!
+    <a href=".." class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-6 u-btn-1">Back</a>
+      </div>
+    </section>
+    
+    <footer class="u-align-center u-clearfix u-image u-shading u-footer" data-image-width="1280" data-image-height="800" id="sec-8c84"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Contact us at<br>ovbotteam@gmail.com
+        </p>
+      </div></footer>
+  </body>
+</html>
