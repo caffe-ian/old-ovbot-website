@@ -1,1 +1,1 @@
-web: gunicorn discordovbot.wsgi --log-file -
+web: gunicorn ovbotdiscord.wsgi --log-file -
