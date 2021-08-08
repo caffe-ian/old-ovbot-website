@@ -71,3 +71,6 @@ def psuccess(request):
 
 def pfail(request):
 	return render(request, "Purchase-fail.html", {})
+
+def verify(request):
+	return render(request, "A6085E730C40707DBAFA47AB2118475E.txt", {})
