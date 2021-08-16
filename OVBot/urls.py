@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from pages.views import homepage, dcase, dpack, propack, hpack, confirm, cfuser, psuccess, pfail, verify, upvote
+from pages.views import homepage, dcase, dpack, propack, hpack, confirm, cfuser, psuccess, pfail, verify
 
 from django.conf import settings
 from django.views.static import serve
@@ -19,7 +19,6 @@ urlpatterns = [
     path('purchase-success/', psuccess, name="purchase-success"),
     path('purchase-fail/', pfail, name="purchase-fail"),
     path('.well-known/pki-validation/A6085E730C40707DBAFA47AB2118475E.txt', verify, name='verify'),
-    path('upvote/SJA2983N38M2RNDJ2398J982ND8932JDN', upvote, name='upvote'),
 
     url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
     url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
