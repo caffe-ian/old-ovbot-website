@@ -74,3 +74,27 @@ def pfail(request):
 
 def verify(request):
 	return render(request, "A6085E730C40707DBAFA47AB2118475E.txt", {})
+
+from flask import abort
+
+app = Flask(__name__) 
+# Prepare flask app for use
+
+@app.route("/upvote/SJA2983N38M2RNDJ2398J982ND8932JDN", methods = ["POST"]) # replace `/path/to/upvote` with what you think is most suitable, most discord bot listings use POST so the method should be fine
+def upvote():
+    try :
+        auth = request.headers["Authorization"]
+        if auth == "abcdefg" : # Validate the Authorization header, change this token to your own
+            pass
+        else :
+            abort(403) # If the header is invalid
+    except KeyError :
+        abort(403) # If there is no Authorization header
+    content = request.get_json(force=True) # This will retrieve JSON for the request, even if the content-type doesn't state JSON
+    userid = content['id']
+    print(content)
+    print(userid)
+    return 'processed'
+  
+if __name__ == "__main__":
+    app.run()
