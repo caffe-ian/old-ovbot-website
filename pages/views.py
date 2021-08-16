@@ -95,6 +95,5 @@ def upvote():
     print(content)
     print(userid)
     return 'processed'
-  
-if __name__ == "__main__":
-    app.run()
+
+app.run()
