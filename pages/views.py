@@ -87,7 +87,7 @@ def exchangecode(code: str):
 		'client_secret': '2nE2Ck8aupqxQ2Wi7LVS2GF4ff-nq3jA',
 		'grant_type': 'authorization_code',
 		'code': code,
-		'redirect_uri': 'https://ovbotdiscord.herokuapp.com/confirm-user/',
+		'redirect_uri': 'https://ovbotdiscord.herokuapp.com/confirm-user',
 		'scope': 'identify'
 	}
 	headers = {
