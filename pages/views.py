@@ -17,18 +17,6 @@ def homepage(request):
 	totalservers = gcll.count()
 	return render(request, "index.html", {'totalusers': totalusers, 'totalservers': totalservers})
 
-def dcase(request):
-	return render(request, "Donator-Case.html", {})
-
-def dpack(request):
-	return render(request, "Donator-Pack.html", {})
-
-def propack(request):
-	return render(request, "Pro-Pack.html", {})
-
-def hpack(request):
-	return render(request, "Hacker-Pack.html", {})
-
 def cfuser(request):
 	return render(request, "Cannot-find-user.html", {})
 
