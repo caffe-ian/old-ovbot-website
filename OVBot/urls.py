@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from pages.views import homepage, dcase, dpack, propack, hpack, confirm, cfuser, psuccess, pfail, verify, login
+from pages.views import homepage, confirm, cfuser, psuccess, pfail, verify, login
 
 from django.conf import settings
 from django.views.static import serve
