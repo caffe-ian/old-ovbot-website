@@ -73,7 +73,7 @@ def login(request):
 def confirm(request):
 	code = request.GET.get('code')
 	user = exchangecode(code)
-	userid = user['id']
+	userid = int(user['id'])
 	if cll.find_one({"id": userid}) == None:
 		return render(request, "Cannot-find-user.html", {'userid': userid})
 	else:
