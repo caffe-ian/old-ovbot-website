@@ -10,10 +10,6 @@ app_name = "pages"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage, name='homepage'),
-    path('donator-case/', dcase, name="donator-case"),
-    path('donator-pack/', dpack, name="donator-pack"),
-    path('pro-pack/', propack, name="pro-pack"),
-    path('hacker-pack/', hpack, name="hacker-pack"),
     path('confirm-user/', confirm, name="confirm-user"),
     path('cannot-find-user/', cfuser, name="cannot-find-user"),
     path('purchase-success/', psuccess, name="purchase-success"),
