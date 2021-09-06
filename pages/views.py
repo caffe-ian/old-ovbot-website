@@ -29,26 +29,56 @@ def psuccess(request):
 		username = request.POST.get('username')
 		itemname = request.POST.get('itemname')
 		quantity = int(request.POST.get('quantity'))
+		gift = request.POST.get('gift')
 
 		if not success == "COMPLETED" or totalprice == 0 or quantity == 0:
 			return render(request, "Purchase-fail.html", {})
 
 		if success == "COMPLETED":
-			if dcll.find_one({"id": userid}) ==  None:
-				dcll.insert_one({"id": userid, "name": username, "totaldonated": 0.0, "totalitembought": 0, "Donator Case": 0, "Donator Pack": 0, "Pro Pack": 0, "Hacker Pack": 0})
-
-			dcll.update_one({"id": userid}, {"$inc": {"totaldonated": totalprice}})
-			dcll.update_one({"id": userid}, {"$inc": {"totalitembought": quantity}})
-			if itemname == "Donator Case":
-				dcll.update_one({"id": userid}, {"$inc": {"Donator Case": quantity}})
-			if itemname == "Donator Pack":
-				dcll.update_one({"id": userid}, {"$inc": {"Donator Pack": quantity}})
-			if itemname == "Pro Pack":
-				dcll.update_one({"id": userid}, {"$inc": {"Pro Pack": quantity}})
-			if itemname == "Hacker Pack":
-				dcll.update_one({"id": userid}, {"$inc": {"Hacker Pack": quantity}})
-
-	return render(request, "Purchase-success.html", {})
+			if gift == "False":
+				if dcll.find_one({"id": userid}) ==  None:
+					dcll.insert_one({"id": userid, "name": username, "totaldonated": 0.0, "totalitembought": 0, "Donator Case": 0, "Donator Pack": 0, "Pro Pack": 0, "Hacker Pack": 0, "gifted": 0, 'giftreceived': 0, 'gifts': {}})
+				user = dcll.find_one({"id": userid})
+				if not user['name'] == username:
+					await dcll.update_one({"id": userid}, {"$set": {"name": username}})
+				dcll.update_one({"id": userid}, {"$inc": {"totaldonated": totalprice}})
+				dcll.update_one({"id": userid}, {"$inc": {"totalitembought": quantity}})
+				if itemname == "Donator Case":
+					dcll.update_one({"id": userid}, {"$inc": {"Donator Case": quantity}})
+				if itemname == "Donator Pack":
+					dcll.update_one({"id": userid}, {"$inc": {"Donator Pack": quantity}})
+				if itemname == "Pro Pack":
+					dcll.update_one({"id": userid}, {"$inc": {"Pro Pack": quantity}})
+				if itemname == "Hacker Pack":
+					dcll.update_one({"id": userid}, {"$inc": {"Hacker Pack": quantity}})
+				return render(request, "Purchase-success.html", {})
+			elif gift == "True":
+				gifterid = request.POST.get('gifterid')
+				giftername = request.POST.get('giftername')
+				if dcll.find_one({"id": gifterid}) ==  None:
+					dcll.insert_one({"id": gifterid, "name": giftername, "totaldonated": 0.0, "totalitembought": 0, "Donator Case": 0, "Donator Pack": 0, "Pro Pack": 0, "Hacker Pack": 0, "gifted": 0, 'giftreceived': 0, 'gifts': {}})
+				if dcll.find_one({"id": userid}) ==  None:
+					dcll.insert_one({"id": userid, "name": username, "totaldonated": 0.0, "totalitembought": 0, "Donator Case": 0, "Donator Pack": 0, "Pro Pack": 0, "Hacker Pack": 0, "gifted": 0, 'giftreceived': 0, 'gifts': {}})
+				user = dcll.find_one({"id": userid})
+				gifter = dcll.find_one({"id": gifterid})
+				if not user['name'] == username:
+					await dcll.update_one({"id": userid}, {"$set": {"name": username}})
+				if not gifter['name'] == giftername:
+					await dcll.update_one({"id": gifterid}, {"$set": {"name": giftername}})
+				dcll.update_one({"id": gifterid}, {"$inc": {"totaldonated": totalprice}})
+				dcll.update_one({"id": gifterid}, {"$inc": {"totalitembought": quantity}})
+				dcll.update_one({"id": gifterid}, {"$inc": {"gifted": quantity}})
+				dcll.update_one({"id": userid}, {"$inc": {"giftreceived": quantity}})
+				dcll.update_one({"id": userid}, {"$set": {"gifts": {"gifterid": gifterid, "itemname": itemname, "quantity": quantity}}})
+				if itemname == "Donator Case":
+					dcll.update_one({"id": userid}, {"$inc": {"Donator Case": quantity}})
+				if itemname == "Donator Pack":
+					dcll.update_one({"id": userid}, {"$inc": {"Donator Pack": quantity}})
+				if itemname == "Pro Pack":
+					dcll.update_one({"id": userid}, {"$inc": {"Pro Pack": quantity}})
+				if itemname == "Hacker Pack":
+					dcll.update_one({"id": userid}, {"$inc": {"Hacker Pack": quantity}})
+				return render(request, "Purchase-success.html", {})
 
 def pfail(request):
 	return render(request, "Purchase-fail.html", {})
