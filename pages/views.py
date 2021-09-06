@@ -91,7 +91,8 @@ def login(request):
 	return redirect(discordauthurl)
 
 def confirm(request):
-	if not request.method == 'POST':
+	print("A")
+	if request.method == 'GET':
 		code = request.GET.get('code')
 		user = exchangecode(code)
 		userid = int(user['id'])
@@ -102,10 +103,9 @@ def confirm(request):
 			user = cll.find_one({"id": userid})
 			username = user['name']
 			return render(request, "Confirm-user.html", {'username': username, 'userid': userid})
-	else:
-		print("A")
+	elif request.method == 'POST':
+		print("B")
 		userid = int(request.POST.get('userid'))
-		print(userid)
 		if cll.find_one({"id": userid}) == None:
 			return render(request, "Cannot-find-user.html", {'userid': userid})
 		else:
