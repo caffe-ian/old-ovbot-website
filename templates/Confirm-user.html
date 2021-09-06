@@ -45,7 +45,7 @@
                     Discord ID example:
                     <form action="/gifting-user/" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="caseform" style="padding: 10px;" onsubmit="return searchuserid()" redirect="true">{% csrf_token %}
                       <div class="u-form-group u-form-group-1">
-                        <input type="text" name="gifterid">"{{ userid }}"</input>
+                        <input type="hidden" id="gifterid" name="gifterid" value="{{ userid }}">
                         <input placeholder="User Discord ID" id="userid" name="userid" class="u-border-1 u-border-black u-grey-50 u-input u-input-rectangle u-radius-8 u-input-1" maxlength="20" type="number">
                       </div>
                       <div class="u-align-left u-form-group u-form-submit">
