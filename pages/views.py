@@ -104,8 +104,11 @@ def confirm(request):
 			return render(request, "Confirm-user.html", {'username': username, 'userid': userid})
 
 def gift(request):
+	print("AA")
 	if request.method == 'POST':
+		print("POSTTTT")
 		userid = int(request.POST.get('userid'))
+		print(userid)
 		if cll.find_one({"id": userid}) == None:
 			return render(request, "Cannot-find-user.html", {'userid': userid})
 		else:
