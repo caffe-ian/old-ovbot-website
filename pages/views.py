@@ -53,7 +53,7 @@ def psuccess(request):
 					dcll.update_one({"id": userid}, {"$inc": {"Hacker Pack": quantity}})
 				return render(request, "Purchase-success.html", {})
 			elif gift == "True":
-				gifterid = request.POST.get('gifterid')
+				gifterid = int(request.POST.get('gifterid'))
 				giftername = request.POST.get('giftername')
 				if dcll.find_one({"id": gifterid}) ==  None:
 					dcll.insert_one({"id": gifterid, "name": giftername, "totaldonated": 0.0, "totalitembought": 0, "Donator Case": 0, "Donator Pack": 0, "Pro Pack": 0, "Hacker Pack": 0, "gifted": 0, 'giftreceived': 0, 'gifts': {}})
