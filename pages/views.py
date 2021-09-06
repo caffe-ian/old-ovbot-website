@@ -107,6 +107,7 @@ def confirm(request):
 		if cll.find_one({"id": userid}) == None:
 			return render(request, "Cannot-find-user.html", {'userid': userid})
 		else:
+			print(loggedid)
 			gifter = cll.find_one({"id": loggedid})
 			user = cll.find_one({"id": userid})
 			username = user['name']
