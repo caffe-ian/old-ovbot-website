@@ -51,9 +51,9 @@
                         <input type="submit" value="submit" class="u-form-control-hidden">
                       </div>
                     </form>
+                    $.post("../gifting-user/", {"gifterid": {{ userid }});
                     <script>
                       function searchuserid() {
-                        var gifterid = 123456789;
                         var userid = document.getElementById("userid").value;
                         var submit = true;
 
