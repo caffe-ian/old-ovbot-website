@@ -92,7 +92,9 @@ def login(request):
 
 def confirm(request):
 	if request.method == 'GET':
+		print("ABC")
 		try:
+			print("A")
 			code = request.GET.get('code')
 			user = exchangecode(code)
 			userid = int(user['id'])
@@ -104,7 +106,9 @@ def confirm(request):
 				username = user['name']
 				return render(request, "Confirm-user.html", {'username': username, 'userid': userid})
 		except:
+			print("B")
 			userid = int(request.GET.get('userid'))
+			print(userid)
 			if cll.find_one({"id": userid}) == None:
 				return render(request, "Cannot-find-user.html", {'userid': userid})
 			else:
