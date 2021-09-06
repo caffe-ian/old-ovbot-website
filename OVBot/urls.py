@@ -16,7 +16,7 @@ urlpatterns = [
     path('purchase-fail/', pfail, name="purchase-fail"),
     path('.well-known/pki-validation/A6085E730C40707DBAFA47AB2118475E.txt', verify, name='verify'),
     path('login/', login, name='login'),
-    path('gifting-user/', gift, name="gift-user"),
+    path('gifting-user/', gift, name="gifting-user"),
 
     url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
     url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
