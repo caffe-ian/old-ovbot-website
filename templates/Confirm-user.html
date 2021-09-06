@@ -42,7 +42,6 @@
                   <p class="u-custom-font u-font-raleway u-text u-text-grey-15 u-text-3">&nbsp;Make sure this is the user you are searching<br>Note: Your donator status will be downgraded if you purchase any pack lower than your current status, donator status does not stack, it will reset the timer instead.</p>
                   <p class="u-custom-font u-font-raleway u-text u-text-4">{{ username }}<br>{{ userid }}<br><br>Gifting someone else? Enter their Discord ID below! Type 'ov id &lt;user&gt;' in Discord to get the user's Discord ID.</p>
                   <div class="u-form u-form-1">
-                    Discord ID example:
                     <form action="/gifting-user/" method="POST" class="u-clearfix u-form-custom-backend u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="caseform" style="padding: 10px;" onsubmit="return searchuserid()" redirect="true">{% csrf_token %}
                       <div class="u-form-group u-form-group-1">
                         <input type="hidden" id="gifterid" name="gifterid" value="{{ userid }}">
