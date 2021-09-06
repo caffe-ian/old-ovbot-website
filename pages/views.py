@@ -79,6 +79,7 @@ def psuccess(request):
 				if itemname == "Hacker Pack":
 					dcll.update_one({"id": userid}, {"$inc": {"Hacker Pack": quantity}})
 				return render(request, "Purchase-success.html", {})
+	return render(request, "Purchase-success.html", {})
 
 def pfail(request):
 	return render(request, "Purchase-fail.html", {})
