@@ -53,8 +53,7 @@
                     </form>
                     <script>
                       function searchuserid() {
-                        $.post("../gifting-user/", {"gifterid": {{ userid }}});
-                        var userid = document.getElementById("userid").value;
+                        var data = {"userid": document.getElementById("userid").value, "gifterid": {{ userid }}};
                         var submit = true;
 
                         if (userid.length < 17 || userid.length >= 20) {
