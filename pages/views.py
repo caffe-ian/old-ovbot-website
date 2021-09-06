@@ -40,7 +40,7 @@ def psuccess(request):
 					dcll.insert_one({"id": userid, "name": username, "totaldonated": 0.0, "totalitembought": 0, "Donator Case": 0, "Donator Pack": 0, "Pro Pack": 0, "Hacker Pack": 0, "gifted": 0, 'giftreceived': 0, 'gifts': {}})
 				user = dcll.find_one({"id": userid})
 				if not user['name'] == username:
-					await dcll.update_one({"id": userid}, {"$set": {"name": username}})
+					dcll.update_one({"id": userid}, {"$set": {"name": username}})
 				dcll.update_one({"id": userid}, {"$inc": {"totaldonated": totalprice}})
 				dcll.update_one({"id": userid}, {"$inc": {"totalitembought": quantity}})
 				if itemname == "Donator Case":
@@ -62,9 +62,9 @@ def psuccess(request):
 				user = dcll.find_one({"id": userid})
 				gifter = dcll.find_one({"id": gifterid})
 				if not user['name'] == username:
-					await dcll.update_one({"id": userid}, {"$set": {"name": username}})
+					dcll.update_one({"id": userid}, {"$set": {"name": username}})
 				if not gifter['name'] == giftername:
-					await dcll.update_one({"id": gifterid}, {"$set": {"name": giftername}})
+					dcll.update_one({"id": gifterid}, {"$set": {"name": giftername}})
 				dcll.update_one({"id": gifterid}, {"$inc": {"totaldonated": totalprice}})
 				dcll.update_one({"id": gifterid}, {"$inc": {"totalitembought": quantity}})
 				dcll.update_one({"id": gifterid}, {"$inc": {"gifted": quantity}})
