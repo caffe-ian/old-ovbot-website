@@ -92,33 +92,29 @@ def login(request):
 
 def confirm(request):
 	if request.method == 'GET':
-		print("ABC")
-		try:
-			print("A")
-			code = request.GET.get('code')
-			user = exchangecode(code)
-			userid = int(user['id'])
-			loggedid = userid
-			if cll.find_one({"id": userid}) == None:
-				return render(request, "Cannot-find-user.html", {'userid': userid})
-			else:
-				user = cll.find_one({"id": userid})
-				username = user['name']
-				return render(request, "Confirm-user.html", {'username': username, 'userid': userid})
-		except:
-			print("B")
-			userid = int(request.POST.get('userid'))
-			print(userid)
-			if cll.find_one({"id": userid}) == None:
-				return render(request, "Cannot-find-user.html", {'userid': userid})
-			else:
-				print(loggedid)
-				gifter = cll.find_one({"id": loggedid})
-				user = cll.find_one({"id": userid})
-				username = user['name']
-				giftername = gifter['name']
-				return render(request, "Gifting-user.html", {'username': username, 'userid': userid, 'giftername': giftername, 'gifterid': loggedid})
-	return render(request, "Confirm-user.html", {'username': username, 'userid': userid})
+		code = request.GET.get('code')
+		user = exchangecode(code)
+		userid = int(user['id'])
+		loggedid = userid
+		if cll.find_one({"id": userid}) == None:
+			return render(request, "Cannot-find-user.html", {'userid': userid})
+		else:
+			user = cll.find_one({"id": userid})
+			username = user['name']
+			return render(request, "Confirm-user.html", {'username': username, 'userid': userid})
+
+def gift(request):
+	if request.method == 'POST':
+		userid = int(request.POST.get('userid'))
+		if cll.find_one({"id": userid}) == None:
+			return render(request, "Cannot-find-user.html", {'userid': userid})
+		else:
+			print(loggedid)
+			gifter = cll.find_one({"id": loggedid})
+			user = cll.find_one({"id": userid})
+			username = user['name']
+			giftername = gifter['name']
+			return render(request, "Gifting-user.html", {'username': username, 'userid': userid, 'giftername': giftername, 'gifterid': loggedid})
 
 def exchangecode(code: str):
 	data = {
