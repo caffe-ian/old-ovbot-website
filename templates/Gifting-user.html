@@ -158,7 +158,7 @@ const csrftoken = getCookie('csrftoken');
           b = items['0']
           itemname = b['name']
           quantity = b['quantity']
-          var data = {'price': priceTotal, 'success': success, 'itemname': itemname, 'quantity': quantity, 'userid': '{{ userid }}', 'username': '{{ username }}', 'csrfmiddlewaretoken': '{{ csrf_token }}', 'gift': "True", 'gifterid': '{{gifterid}}' };
+          var data = {'price': priceTotal, 'success': success, 'itemname': itemname, 'quantity': quantity, 'userid': '{{ userid }}', 'username': '{{ username }}', 'csrfmiddlewaretoken': '{{ csrf_token }}', 'gift': "True", 'gifterid': '{{gifterid}}', 'giftername': '{{giftername}}' };
           $.post("../purchase-success/", data);
           setTimeout(() => {  window.location.replace("../purchase-success/"); }, 1000);
         });
