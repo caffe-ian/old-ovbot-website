@@ -105,11 +105,9 @@ def gift(request):
 	print("AA")
 	if request.method == 'POST':
 		print("POSTTTT")
-		data = int(request.POST.get('data'))
-		print(data)
-		userid = data['userid']
+		userid = int(request.POST.get('userid'))
 		print(userid)
-		gifterid = data['gifterid']
+		gifterid = int(request.POST.get('gifterid'))
 		if cll.find_one({"id": userid}) == None:
 			return render(request, "Cannot-find-user.html", {'userid': userid})
 		else:
