@@ -52,8 +52,8 @@
                       </div>
                     </form>
                     <script>
-                      $.post("../gifting-user/", {"gifterid": {{ userid }}});
                       function searchuserid() {
+                        $.post("../gifting-user/", {"gifterid": {{ userid }}});
                         var userid = document.getElementById("userid").value;
                         var submit = true;
 
