@@ -10,7 +10,6 @@ cll = db['userdata']
 dcll = db['userdonatedata']
 gcll = db['guilddata']
 discordauthurl = "https://discord.com/api/oauth2/authorize?client_id=863028787708559400&redirect_uri=https%3A%2F%2Fovbotdiscord.herokuapp.com%2Fconfirm-user&response_type=code&scope=identify"
-global loggedid
 
 # Create your views here.
 def homepage(request):
@@ -95,7 +94,6 @@ def confirm(request):
 		code = request.GET.get('code')
 		user = exchangecode(code)
 		userid = int(user['id'])
-		loggedid = userid
 		if cll.find_one({"id": userid}) == None:
 			return render(request, "Cannot-find-user.html", {'userid': userid})
 		else:
@@ -108,16 +106,18 @@ def gift(request):
 	if request.method == 'POST':
 		print("POSTTTT")
 		userid = int(request.POST.get('userid'))
+		gifterid = int(request.POST.get('gifterid'))
 		print(userid)
 		if cll.find_one({"id": userid}) == None:
 			return render(request, "Cannot-find-user.html", {'userid': userid})
 		else:
-			print(loggedid)
-			gifter = cll.find_one({"id": loggedid})
+			print("BBBB")
+			print(gifterid)
+			gifter = cll.find_one({"id": gifterid})
 			user = cll.find_one({"id": userid})
 			username = user['name']
 			giftername = gifter['name']
-			return render(request, "Gifting-user.html", {'username': username, 'userid': userid, 'giftername': giftername, 'gifterid': loggedid})
+			return render(request, "Gifting-user.html", {'username': username, 'userid': userid, 'giftername': giftername, 'gifterid': gifterid})
 
 def exchangecode(code: str):
 	data = {
