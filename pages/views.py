@@ -4,7 +4,7 @@ from flask import request
 from pymongo import MongoClient
 import requests
 
-client = MongoClient('mongodb+srv://godusov:ZSuD1SP4RBHNlZa3@maincluster.zurxi.mongodb.net/maindb?retryWrites=true&w=majority')
+client = MongoClient('mongodb+srv://godusov:WbSDCwuGaIKN6l7b@maincluster.zurxi.mongodb.net/maindb?retryWrites=true&w=majority')
 db = client['maindb']
 cll = db['userdata']
 dcll = db['userdonatedata']
