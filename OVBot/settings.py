@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = f"django-insecure-i#4=w@5(sv6$kjn4o@&pkcg^n%w_vq9)3f1(@==^g$hn1eldor"
+SECRET_KEY = ";c(op_-`+ks=IlxL~fbK*Z*/nP[qo}xM[B@ni#4=w@5(sv6$kj:A_Gx?l^Ii|p[ilM#}aQq!]n4o@&pkcg^n$w_vq9)3f1(@==^g$hn1eldor"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -55,6 +55,13 @@ MIDDLEWARE = [
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+SECURE_SSL_REDIRECT = True
+SECURE_BROWSER_XSS_FILTER = True
 
 ROOT_URLCONF = 'OVBot.urls'
 
@@ -86,7 +93,7 @@ DATABASES = {
         'NAME': 'django',
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
-            'host': 'mongodb+srv://godusov:ZSuD1SP4RBHNlZa3@maincluster.zurxi.mongodb.net/maindb?retryWrites=true&w=majority'
+            'host': 'mongodb+srv://godusov:WbSDCwuGaIKN6l7b@maincluster.zurxi.mongodb.net/maindb?retryWrites=true&w=majority'
         }
     }
 }
@@ -128,10 +135,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root/')
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/')]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static/')
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
