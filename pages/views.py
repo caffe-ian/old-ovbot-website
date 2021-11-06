@@ -4,7 +4,7 @@ from flask import request
 from pymongo import MongoClient
 import requests
 
-client = MongoClient('mongodb+srv://godusov:WbSDCwuGaIKN6l7b@maincluster.zurxi.mongodb.net/maindb?retryWrites=true&w=majority')
+client = MongoClient("mongodb+srv://godusov:WbSDCwuGaIKN6l7b@maincluster.zurxi.mongodb.net/maindb?retryWrites=true&w=majority")
 db = client['maindb']
 cll = db['userdata']
 dcll = db['userdonatedata']
@@ -15,6 +15,7 @@ discordauthurl = "https://discord.com/api/oauth2/authorize?client_id=86302878770
 def homepage(request):
 	totalusers = cll.count()
 	totalservers = gcll.count()
+	gcll.update_one({"id": 863025676213944340}, {"$inc": {"websitevisitors": 1}})
 	return render(request, "index.html", {'totalusers': totalusers, 'totalservers': totalservers})
 
 def cfuser(request):
@@ -102,18 +103,12 @@ def confirm(request):
 			return render(request, "Confirm-user.html", {'username': username, 'userid': userid})
 
 def gift(request):
-	print("AA")
 	if request.method == 'POST':
-		print("POSTTTT")
 		userid = int(request.POST.get('userid'))
-		print(userid)
-		print(request.POST.get('gifterid'))
 		gifterid = int(request.POST.get('gifterid'))
 		if cll.find_one({"id": userid}) == None:
 			return render(request, "Cannot-find-user.html", {'userid': userid})
 		else:
-			print("BBBB")
-			print(gifterid)
 			gifter = cll.find_one({"id": gifterid})
 			user = cll.find_one({"id": userid})
 			username = user['name']
