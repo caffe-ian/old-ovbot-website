@@ -64,7 +64,7 @@
   border-style: none;
   font-weight: 700;
   font-size: 0.9375rem;
-  margin: 30px 60px 0 auto;
+  margin: 30px 60px 100px auto;
   padding: 12px 33px 14px;
 }
 
@@ -80,9 +80,9 @@
   }
 
   .u-section-1 .u-btn-1 {
-    margin-top: 344px;
+    margin-top: 30px;
     margin-right: 70px;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
   }
 }
 
@@ -106,8 +106,9 @@
   }
 
   .u-section-1 .u-btn-1 {
-    margin-top: 222px;
+    margin-top: 30px;
     margin-right: 29px;
+    margin-bottom: 100px;
   }
 }
 
@@ -140,7 +141,9 @@
   }
 
   .u-section-1 .u-btn-1 {
+    margin-top:  30px;
     margin-right: 0;
+    margin-bottom: 100px;
   }
 }
 
@@ -172,8 +175,8 @@
   }
 
   .u-section-1 .u-btn-1 {
-    margin-top: 220px;
-    margin-bottom: 60px;
+    margin-top: 30px;
+    margin-bottom: 100px;
   }
 }.u-footer {
     background-image: linear-gradient(0deg, rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("images/darkbackground3.jpg");
