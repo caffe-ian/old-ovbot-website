@@ -64,7 +64,7 @@
   border-style: none;
   font-weight: 700;
   font-size: 0.9375rem;
-  margin: 30px 60px 30px 60px;
+  margin: 30px 60px 0 auto;
   padding: 12px 33px 14px;
 }
 
@@ -82,7 +82,7 @@
   .u-section-1 .u-btn-1 {
     margin-top: 344px;
     margin-right: 70px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
   }
 }
 
@@ -173,7 +173,7 @@
 
   .u-section-1 .u-btn-1 {
     margin-top: 220px;
-    margin-bottom: 120px;
+    margin-bottom: 60px;
   }
 }.u-footer {
     background-image: linear-gradient(0deg, rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("images/darkbackground3.jpg");
