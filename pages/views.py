@@ -90,6 +90,9 @@ def verify(request):
 def login(request):
 	return redirect(discordauthurl)
 
+def privacy(request):
+	return render(request, "Privacy-Policy.html", {})
+
 def confirm(request):
 	if request.method == 'GET':
 		code = request.GET.get('code')
