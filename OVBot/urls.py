@@ -18,8 +18,8 @@ urlpatterns = [
     path('login/', login, name='login'),
     path('gifting-user/', gift, name="gifting-user"),
     path('privacy-policy/', privacy, name="privacy-policy"),
-    path('paypaljsg.js', paypaljsg, name='paypaljsg')
-    path('paypaljsc.js', paypaljsc, name='paypaljsc')
+    path('paypaljsg.js', paypaljsg, name='paypaljsg'),
+    path('paypaljsc.js', paypaljsc, name='paypaljsc'),
 
     url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
     url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
