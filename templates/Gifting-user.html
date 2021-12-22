@@ -80,7 +80,6 @@
 const csrftoken = getCookie('csrftoken');
 
       function initPayPalButton() {
-        var shipping = 0;
         var itemOptions = document.querySelector("#smart-button-container #item-options");
     var quantity = parseInt(20);
     var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
@@ -112,7 +111,7 @@ const csrftoken = getCookie('csrftoken');
 
         tax *= quantity;
         tax = Math.round(tax * 100) / 100;
-        priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+        priceTotal = quantity * selectedItemPrice + tax;
         priceTotal = Math.round(priceTotal * 100) / 100;
         var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
 
@@ -126,10 +125,6 @@ const csrftoken = getCookie('csrftoken');
                 item_total: {
                   currency_code: 'USD',
                   value: itemTotalValue,
-                },
-                shipping: {
-                  currency_code: 'USD',
-                  value: shipping,
                 },
                 tax_total: {
                   currency_code: 'USD',
