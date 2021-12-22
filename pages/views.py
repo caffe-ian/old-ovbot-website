@@ -87,6 +87,9 @@ def pfail(request):
 def verify(request):
 	return render(request, "A6085E730C40707DBAFA47AB2118475E.txt", {})
 
+def verify(request):
+	return render(request, "paypaljs.js", {})
+
 def login(request):
 	return redirect(discordauthurl)
 
