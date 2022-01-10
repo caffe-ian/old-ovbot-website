@@ -37,7 +37,14 @@ const csrftoken = getCookie('csrftoken');
       },
       createOrder: function(data, actions) {
         var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
-        var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+        let _prices = {
+            "Donator Case": 1.99,
+            "Donator Pack": 4.99,
+            "Pro Pack": 9.99,
+            "Hacker Pack": 19.99,
+        }
+        var selectedItemPrice = _prices[selectedItemDescription]
+
         var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
         if(quantitySelect.options.length > 0) {
           quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
