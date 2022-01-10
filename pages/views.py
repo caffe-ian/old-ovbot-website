@@ -113,7 +113,7 @@ def gift(request):
 			if userid == gifterid:
 				reason = "Why are you gifting yourself..."
 			else:
-				reason = "User ID '{{ userid }}' not found... Make sure you entered a valid Discord ID.<br>Or the user have not started playing OV Bot yet..."
+				reason = "User ID not found... Make sure you entered a valid Discord ID.<br>Or the user have not started playing OV Bot yet..."
 			return render(request, "Cannot-find-user.html", {'userid': userid, 'reason': reason})
 		else:
 			gifter = cll.find_one({"id": gifterid})
