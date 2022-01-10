@@ -37,13 +37,8 @@ def psuccess(request):
 		if success == "COMPLETED":
 			if gift == "False":
 				if dcll.find_one({"id": userid}) is  None:
-					print(dcll)
-					try:
-						dcll.insert_one({"id": userid, "name": username, "totaldonated": 0.0, "totalitembought": 0, "Donator Case": 0, "Donator Pack": 0, "Pro Pack": 0, "Hacker Pack": 0, "gifted": 0, 'giftreceived': 0, 'gifts': {}})
-					except Exception as error:
-						print(error)
+					dcll.insert_one({"id": userid, "name": username, "totaldonated": 0.0, "totalitembought": 0, "Donator Case": 0, "Donator Pack": 0, "Pro Pack": 0, "Hacker Pack": 0, "gifted": 0, 'giftreceived': 0, 'gifts': {}})
 				user = dcll.find_one({"id": userid})
-				print(user['name'])
 				if not user['name'] == username:
 					dcll.update_one({"id": userid}, {"$set": {"name": username}})
 				dcll.update_one({"id": userid}, {"$inc": {"totaldonated": totalprice}})
@@ -114,7 +109,7 @@ def gift(request):
 	if request.method == 'POST':
 		userid = int(request.POST.get('userid'))
 		gifterid = int(request.POST.get('gifterid'))
-		if cll.find_one({"id": userid}) == None:
+		if cll.find_one({"id": userid}) == None or userid == gifterid:
 			if userid == gifterid:
 				reason = "Why are you gifting yourself..."
 			else:
