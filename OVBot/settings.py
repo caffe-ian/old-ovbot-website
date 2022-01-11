@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = ";c(op_-`+ks=IlxL~fbK*Z*/nP[qo}xM[B@ni#4=w@5(sv6$kj:A_Gx?l^Ii|p[ilM#}aQq!]n4o@&pkcg^n$w_vq9)3f1(@==^g$hn1eldor"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','ovbotdiscord.herokuapp.com']
 
