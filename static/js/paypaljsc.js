@@ -96,7 +96,7 @@ function initPayPalButton() {
           b = items['0']
           itemname = b['name']
           quantity = b['quantity']
-          var data = {'price': priceTotal, 'success': success, 'itemname': itemname, 'quantity': quantity, 'userid': '{{ userid }}', 'username': '{{ username }}', 'csrfmiddlewaretoken': csrftoken, 'gift': "False" };
+          var data = {'price': priceTotal, 'success': success, 'itemname': itemname, 'quantity': quantity, 'userid': document.getElementById("item-options").getAttribute("userid"), 'username': document.getElementById("item-options").getAttribute("username"), 'csrfmiddlewaretoken': csrftoken, 'gift': "False" };
           $.post("../purchase-success/", data);
           setTimeout(() => {  window.location.replace("../purchase-success/"); }, 1000);
         });
