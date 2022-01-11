@@ -1,3 +1,18 @@
+function getCookie(name) {
+                      let cookieValue = null;
+                      if (document.cookie && document.cookie !== '') {
+                          const cookies = document.cookie.split(';');
+                          for (let i = 0; i < cookies.length; i++) {
+                              const cookie = cookies[i].trim();
+                              if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                                  cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                                  break;
+                              }
+                          }
+                      }
+                      return cookieValue;
+                  }
+const csrftoken = getCookie('csrftoken');
 function initPayPalButton() {
         var itemOptions = document.querySelector("#smart-button-container #item-options");
     var quantity = parseInt(20);
@@ -81,7 +96,7 @@ function initPayPalButton() {
           b = items['0']
           itemname = b['name']
           quantity = b['quantity']
-          var data = {'price': priceTotal, 'success': success, 'itemname': itemname, 'quantity': quantity, 'userid': '{{ userid }}', 'username': '{{ username }}', 'csrfmiddlewaretoken': '{{ csrf_token }}', 'gift': "True", 'gifterid': '{{gifterid}}', 'giftername': '{{giftername}}' };
+          var data = {'price': priceTotal, 'success': success, 'itemname': itemname, 'quantity': quantity, 'userid': '{{ userid }}', 'username': '{{ username }}', 'csrfmiddlewaretoken': csrftoken, 'gift': "True", 'gifterid': '{{gifterid}}', 'giftername': '{{giftername}}' };
           $.post("../purchase-success/", data);
           setTimeout(() => {  window.location.replace("../purchase-success/"); }, 1000);
         });
