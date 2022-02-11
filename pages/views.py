@@ -94,16 +94,19 @@ def privacy(request):
 	return render(request, "Privacy-Policy.html", {})
 
 def confirm(request):
-	if request.method == 'GET':
-		code = request.GET.get('code')
-		user = exchangecode(code)
-		userid = int(user['id'])
-		if cll.find_one({"id": userid}) == None:
-			return render(request, "Cannot-find-user.html", {'userid': userid})
-		else:
-			user = cll.find_one({"id": userid})
-			username = user['name']
-			return render(request, "Confirm-user.html", {'username': username, 'userid': userid})
+	try:
+		if request.method == 'GET':
+			code = request.GET.get('code')
+			user = exchangecode(code)
+			userid = int(user['id'])
+			if cll.find_one({"id": userid}) == None:
+				return render(request, "Cannot-find-user.html", {'userid': userid})
+			else:
+				user = cll.find_one({"id": userid})
+				username = user['name']
+				return render(request, "Confirm-user.html", {'username': username, 'userid': userid})
+	except:
+		return redirect("https://ovbotdiscord.herokuapp.com/login")
 
 def gift(request):
 	if request.method == 'POST':
