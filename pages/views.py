@@ -106,7 +106,7 @@ def confirm(request):
 				username = user['name']
 				return render(request, "Confirm-user.html", {'username': username, 'userid': userid})
 	except:
-		return redirect("https://ovbotdiscord.herokuapp.com/login")
+		return redirect("https://ov-bot.up.railway.app/login")
 
 def gift(request):
 	if request.method == 'POST':
@@ -131,7 +131,7 @@ def exchangecode(code: str):
 		'client_secret': '2nE2Ck8aupqxQ2Wi7LVS2GF4ff-nq3jA',
 		'grant_type': 'authorization_code',
 		'code': code,
-		'redirect_uri': 'https://ovbotdiscord.herokuapp.com/confirm-user',
+		'redirect_uri': 'https://ov-bot.up.railway.app/confirm-user',
 		'scope': 'identify'
 	}
 	headers = {
