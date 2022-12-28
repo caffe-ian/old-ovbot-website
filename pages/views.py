@@ -9,7 +9,7 @@ db = client['maindb']
 cll = db['userdata']
 dcll = db['userdonatedata']
 gcll = db['guilddata']
-discordauthurl = "https://discord.com/api/oauth2/authorize?client_id=863028787708559400&redirect_uri=https%3A%2F%2Fovbotdiscord.herokuapp.com%2Fconfirm-user&response_type=code&scope=identify"
+discordauthurl = "https://discord.com/api/oauth2/authorize?client_id=863028787708559400&redirect_uri=https%3A%2F%2Fov-bot.up.railway.app%2Fconfirm-user&response_type=code&scope=identify"
 
 # Create your views here.
 def homepage(request):
