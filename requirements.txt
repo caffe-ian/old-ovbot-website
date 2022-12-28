@@ -9,7 +9,7 @@ discord.py==1.7.3
 distlib==0.3.2
 dnspython==2.1.0
 filelock==3.0.12
-gunicorn==20.1.0
+gunicorn
 idna==3.2
 motor==2.4.0
 multidict==5.1.0
