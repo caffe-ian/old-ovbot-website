@@ -25,7 +25,7 @@ SECRET_KEY = ";c(op_-`+ks=IlxL~fbK*Z*/nP[qo}xM[B@ni#4=w@5(sv6$kj:A_Gx?l^Ii|p[ilM
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','ov-bot.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','ov-bot.up.railway.app']
 
 
 # Application definition
