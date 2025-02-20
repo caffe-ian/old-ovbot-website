@@ -1,2 +1,2 @@
-# ovbot
-discord ov bot
+# OV Bot Website
+## Old official website of OV Bot
